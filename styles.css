@@ -16,16 +16,59 @@ body {
 /***********HERO SECT*************/
 header {
     height: 100vh;
+    padding: 1.5em;
     background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(img/hero.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: 80% 0;
-    padding: 1.5em;
+    
+}
+
+div.icons {
+    text-align: right;
+    margin-right: 3em;
+}
+
+div.icons a {
+    display: inline-block;
+}
+
+i.fa {
+    font-size: 1.2em;
+    display: inline-block;
+    transition: transform 200ms ease-in;
+}
+
+i.fa:hover {
+    transform: scale(1.4);
+}
+
+div.icons a:not(:first-child) {
+    margin-left: 1em;
+}
+
+.fa-facebook-square {
+    color: rgb(59, 89, 152);
+}
+
+.fa-twitter-square {
+    color: rgb(0,182,241);
+}
+
+.fa-pinterest-square {
+    color: rgb(203,32,39);
+}
+
+.fa-instagram {
+    color: rgb(195,42,163);
+}
+
+div.navWrap {
+    margin-top: -1em;
 }
 
 nav.navs {
     display: flex;
-    
 }
 
 li.logoNav {
@@ -38,7 +81,7 @@ li.logoNav img.logo {
     border-radius: 50%;
     height: 140px;
     width: auto;
-    margin-top: -1.7em;
+    margin-top: -1em;
     opacity: .9;
     
 }
@@ -67,19 +110,20 @@ li.logoNav::after {
 }
 
 li:not(.logoNav) {
-    margin-top: 1.2em
+    margin-top: 2.2em;
 }
 
 nav.navs li:first-child, nav.navs li:nth-child(4) {
-    margin-right: 1.5em
+    margin-right: 1.5em;
 }
 
 nav.navs a:link, nav.navs a:visited {
     font-size: 1.2em;
     display: inline-block;
-    padding: .75em 0em;
     color: #fff;
     text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
 }
 
 nav.navs a:not(.logoAnch):hover {
@@ -91,15 +135,18 @@ div.hero--text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
+    width: 85%;
 }
 
 div.hero--text h1 {
     color: #fff;
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 3.2em;
+    font-weight: 100;
     text-transform: uppercase;
     margin-bottom: .5em;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.7)
 }
 
 div.hero--text h2 {
@@ -138,7 +185,79 @@ a.btn-ghost:hover {
 }
 
 
-/********FIRST SECT********/
+/********MAIN STYLES********/
 section {
-    height: 400px;
+    padding: 5em 1.5em;
+}
+
+div.headingWrapper {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+h2.sectHeading {
+    font-size: 2.5em;
+    font-weight: 300;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+h2.sectHeading::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20%;
+    background-color: #e67e22; 
+}
+
+h2.sectHeading::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20%;
+    background-color: #e67e22; 
+}
+
+/********INTRODUCTION SECTION********/
+
+section.intro {
+    background-color: rgba(0,0,0,.9);
+    color: #fff;
+}
+
+div.gridOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4em 2em;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+section.intro p {
+    line-height: 1.7;
+}
+
+section.intro p + p {
+    margin-top: 2em
+}
+
+section.intro h3 {
+    font-size: 1.8em;
+    margin-bottom: 1em; 
+    text-align: center;
+}
+
+div.salonImg img {
+    width: 100%;
 }
