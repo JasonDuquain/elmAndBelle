@@ -8,7 +8,7 @@
 
 body {
     font-size: 100%;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     color: #333;
     text-decoration: none;
 }
@@ -39,7 +39,7 @@ i.fa {
     transition: transform 200ms ease-in;
 }
 
-i.fa:hover {
+div.icons i.fa:hover {
     transform: scale(1.4);
 }
 
@@ -124,6 +124,7 @@ nav.navs a:link, nav.navs a:visited {
     text-transform: uppercase;
     padding-bottom: 5px;
     border-bottom: 3px solid transparent;
+    transition: border-bottom 300ms ease-out 50ms;
 }
 
 nav.navs a:not(.logoAnch):hover {
@@ -141,12 +142,12 @@ div.hero--text {
 div.hero--text h1 {
     color: #fff;
     font-size: 3.2em;
-    font-weight: 100;
+    font-weight: 300;
     text-transform: uppercase;
     margin-bottom: .5em;
     letter-spacing: 2px;
     word-spacing: 2px;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.7)
+    text-shadow: 1px 1px 1px rgba(0,0,0,.7);
 }
 
 div.hero--text h2 {
@@ -186,8 +187,12 @@ a.btn-ghost:hover {
 
 
 /********MAIN STYLES********/
+p {
+    line-height: 1.4;
+}
+
 section {
-    padding: 5em 1.5em;
+    padding: 8em 1.5em;
 }
 
 div.headingWrapper {
@@ -213,7 +218,7 @@ h2.sectHeading::before {
     width: 40px;
     top: 50%;
     transform: translateY(-50%);
-    left: -20%;
+    left: -1.5em;
     background-color: #e67e22; 
 }
 
@@ -225,15 +230,28 @@ h2.sectHeading::after {
     width: 40px;
     top: 50%;
     transform: translateY(-50%);
-    right: -20%;
+    right: -1.5em;
     background-color: #e67e22; 
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 1em; 
 }
 
 /********INTRODUCTION SECTION********/
 
 section.intro {
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0,0,0,1);
     color: #fff;
+    clip-path: polygon(0 3vw, 100% 0, 100% calc(100% - 3vw), 0 100%);
+}
+
+@supports ((clip-path: polygon(0 0)) or
+(-webkit-clip-path: polygon(0 0))) {
+    section.intro {
+        margin-top: -3.4vw;
+    }
 }
 
 div.gridOne {
@@ -253,11 +271,81 @@ section.intro p + p {
 }
 
 section.intro h3 {
-    font-size: 1.8em;
-    margin-bottom: 1em; 
     text-align: center;
 }
 
-div.salonImg img {
+div.firstImgs {
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: all 400ms ease-out;
+}
+
+div.firstImgs:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+div.firstImgs img {
+    border-radius: 1em;
+    display: block;
     width: 100%;
 }
+
+
+/********SERVICES SECTION********/
+
+p.services-para {
+    line-height: 1.7;
+    font-size: 1.3em;
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+div.gridTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2.5em;
+    margin-top: 3em;
+}
+
+div.services--content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,.1);
+    border-radius: .4em;
+}
+
+div.services--content p {
+    margin-bottom: 1.5em;
+}
+
+div.services--content a.btn {
+    margin-top: auto;
+    align-self: center;
+}
+
+div.services--content i {
+    font-size: 250%;
+    color: #e67e22;
+    margin-bottom: .3em;
+}
+
+div.special {
+    font-weight: 300;
+    margin-top: 3em;
+    max-width: 40%;
+    padding: 1.5em;
+    border-radius: 3em;
+    background-image: linear-gradient(#fff, #fefaf0);
+    border-top: 10px solid #a00606;
+    border-bottom: 10px solid #a00606;
+    margin: 3em auto 0 auto;
+}
+
+div.special h3 {
+    color: #a00606;
+    text-align: center;
+    font-size: 1.6em
+}
+
+/********GALLERY********/
