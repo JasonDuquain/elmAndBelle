@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Lato', serif;
+    color: #333;
+    text-decoration: none;
+}
+
+/***********HERO SECT*************/
+header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(img/hero.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80% 0;
+    padding: 1.5em;
+}
+
+nav.navs {
+    display: flex;
+    
+}
+
+li.logoNav {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+li.logoNav img.logo {
+    border-radius: 50%;
+    height: 140px;
+    width: auto;
+    margin-top: -1.7em;
+    opacity: .9;
+    
+}
+
+li.logoNav::before {
+    font-size: 5em;
+    font-weight: 700;
+    color: #e67e22;
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    content: "Elm";
+    top: 15%;
+    right: 120%;
+}
+
+li.logoNav::after {
+    font-size: 5em;
+    font-weight: 700;
+    color: #e67e22;
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    content: "Belle";
+    top: 15%;
+    left: 120%;
+    z-index: 4;
+}
+
+li:not(.logoNav) {
+    margin-top: 1.2em
+}
+
+nav.navs li:first-child, nav.navs li:nth-child(4) {
+    margin-right: 1.5em
+}
+
+nav.navs a:link, nav.navs a:visited {
+    font-size: 1.2em;
+    display: inline-block;
+    padding: .75em 0em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav.navs a:not(.logoAnch):hover {
+    border-bottom: 3px solid #e67e22;
+}
+
+div.hero--text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+}
+
+div.hero--text h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: .5em;
+}
+
+div.hero--text h2 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 1em;
+}
+
+a.btn:link, a.btn:visited {
+    display: inline-block;
+    padding: .75em 1.2em;
+    border: 1px solid #e67e22;
+    border-radius: 999em;
+    transition: all 300ms ease-out 50ms;
+}
+
+a.btn-full:link, a.btn-full:visited {
+    margin-right: 1em;
+    color: #fff;
+    background-color: #e67e22;
+}
+
+a.btn-full:hover {
+    background-color: #a25109;
+    border: 1px solid #a25109;
+}
+
+a.btn-ghost:link, a.btn-ghost:visited {
+    color: #e67e22;
+}
+
+a.btn-ghost:hover {
+    color: #fff;
+    background-color: #e67e22;
+}
+
+
+/********FIRST SECT********/
+section {
+    height: 400px;
+}
