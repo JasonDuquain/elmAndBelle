@@ -29,8 +29,6 @@ section {
 }
 
 section.clippy {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
     clip-path: polygon(0 3vw, 100% 0, 100% calc(100% - 3vw), 0 100%);
 }
 
@@ -89,15 +87,34 @@ h3 {
 header {
     height: 100vh;
     padding: 1.5em;
-    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(img/hero.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../img/hero.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: 80% 0; 
 }
 
+.fullNavWrapper {
+    transition: all 300ms ease-out;
+}
+
+.fullNavWrapper.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    z-index: 100;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
 div.icons {
     text-align: right;
     margin-right: 3em;
+}
+
+.fullNavWrapper.sticky div.icons {
+    margin-top: .3em
 }
 
 div.icons a {
@@ -154,8 +171,15 @@ li.logoNav img.logo {
     width: auto;
     margin-top: -1em;
     opacity: .9;
-    
+    transition: all 300ms 300ms;
 }
+
+div.fullNavWrapper.sticky li.logoNav img.logo {
+    height: 70px;
+    width: auto;
+    margin-top: 0em;
+}
+
 
 li.logoNav::before {
     font-size: 5em;
@@ -180,8 +204,17 @@ li.logoNav::after {
     z-index: 4;
 }
 
+div.fullNavWrapper.sticky li.logoNav::before, div.fullNavWrapper.sticky li.logoNav::after {
+    font-size: 3em;
+}
+
+
 li:not(.logoNav) {
     margin-top: 2.2em;
+}
+
+div.fullNavWrapper.sticky li:not(.logoNav) {
+    margin-top: 1.7em
 }
 
 nav.navs li:first-child, nav.navs li:nth-child(4) {
@@ -196,6 +229,10 @@ nav.navs a:link, nav.navs a:visited {
     padding-bottom: 5px;
     border-bottom: 3px solid transparent;
     transition: border-bottom 300ms ease-out 50ms;
+}
+
+div.fullNavWrapper.sticky nav.navs a:link, div.fullNavWrapper.sticky nav.navs a:visited {
+    font-size: 1em;
 }
 
 nav.navs a:not(.logoAnch):hover {
@@ -296,6 +333,11 @@ div.firstImgs img {
 
 /********SERVICES SECTION********/
 
+section.intro {
+    background-color: rgba(0,0,0,1);
+    color: #fff;
+}
+
 p.services-para {
     line-height: 1.7;
     font-size: 1.3em;
@@ -356,6 +398,7 @@ div.special h3 {
 
 section.gallery {
     background-color: #000;
+    color: #fff;
 }
 
 div.gridThree {
@@ -385,7 +428,6 @@ figure div.imgWrap {
     display: flex;
     flex-direction: column;
     flex: 1;
-    
 }
 
 figure img {
@@ -450,6 +492,100 @@ figure:hover figure::before {
     opacity: 1;
 }
 */
+
+
+/*********TESTIMONIALS**********/
+
+section.testimonials {
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/items.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+div.gridFour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5em;
+    margin-top: 120px;
+}
+
+div.customer--content {
+    background-color: rgba(255,255,255,.4);
+    padding: 1.5em;
+    border: 5px solid #fff;
+    border-radius: 4px;
+}
+
+div.userWrap {
+    text-align: center;
+    margin-top: -107px;
+}
+
+img.userPic {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    width: 150px;
+    height: auto;
+}
+
+h2.user--name {
+    margin-top: 1.2em;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: .2em;
+}
+
+p.user--visits {
+    text-align: center;
+    margin-bottom: .75em;
+}
+
+div.quoteWrap {
+    padding: 2em;
+    background-color: #e67e22;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    clip-path: polygon(0 1em, 100% 0, 100% calc(100% - 1em), 0 100%);
+    color: #fff;
+}
+
+blockquote {
+    margin-bottom: 1em; 
+    line-height: 1.4;
+    font-weight: 300;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+    color: rgba(255,255,255,.3);
+    font-size: 11em;
+    line-height: .5;
+    display: block;
+    position: absolute;
+    top: .05em;
+    left: -.22em;
+    font-family: sans-serif;
+}
+
+cite {
+    display: block;
+    font-style: italic;
+    text-align: right;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
