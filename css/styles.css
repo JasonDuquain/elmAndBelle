@@ -34,7 +34,7 @@ section.clippy {
 
 @supports ((clip-path: polygon(0 0)) or
 (-webkit-clip-path: polygon(0 0))) {
-    section.clippy {
+    section.clippy, footer.clippy {
         margin-top: -3.4vw;
     }
 }
@@ -81,6 +81,22 @@ h2.sectHeading::after {
 h3 {
     font-size: 1.8em;
     margin-bottom: 1em; 
+}
+
+@keyframes highlightTarget {
+    0% {
+       letter-spacing: 8px;
+        background-color: goldenrod;
+    }
+    
+    100% {
+        letter-spacing: 2px;
+        background-color: inherit;
+    }
+}
+
+section:target h2.sectHeading {
+    animation: highlightTarget 1200ms ease-out;
 }
 
 /***********HERO SECT*************/
@@ -180,7 +196,6 @@ div.fullNavWrapper.sticky li.logoNav img.logo {
     margin-top: 0em;
 }
 
-
 li.logoNav::before {
     font-size: 5em;
     font-weight: 700;
@@ -208,9 +223,12 @@ div.fullNavWrapper.sticky li.logoNav::before, div.fullNavWrapper.sticky li.logoN
     font-size: 3em;
 }
 
-
-li:not(.logoNav) {
+nav.navs li:not(.logoNav) {
     margin-top: 2.2em;
+}
+/***ADDED TO ENSURE LOGO IS CENTERED - FIND A BETER FIX***/
+nav.navs li:nth-child(2) {
+    padding-right: 5em;
 }
 
 div.fullNavWrapper.sticky li:not(.logoNav) {
@@ -235,6 +253,11 @@ div.fullNavWrapper.sticky nav.navs a:link, div.fullNavWrapper.sticky nav.navs a:
     font-size: 1em;
 }
 
+nav.navs a.scrollHighlight {
+    color: #e67e22;
+}
+
+/*add link and visited pseudo classes to avoid any conflicts!!!*/
 nav.navs a:not(.logoAnch):hover {
     border-bottom: 3px solid rgb(230, 126, 34);
 }
@@ -265,7 +288,7 @@ div.hero--text h2 {
     margin-bottom: 1em;
 }
 
-a.btn:link, a.btn:visited {
+a.btn:link, a.btn:visited, input[type="submit"] {
     display: inline-block;
     padding: .75em 1.2em;
     border: 1px solid #e67e22;
@@ -273,13 +296,13 @@ a.btn:link, a.btn:visited {
     transition: all 300ms ease-out 50ms;
 }
 
-a.btn-full:link, a.btn-full:visited {
+a.btn-full:link, a.btn-full:visited, input[type="submit"] {
     margin-right: 1em;
     color: #fff;
     background-color: #e67e22;
 }
 
-a.btn-full:hover {
+a.btn-full:hover, input[type="submit"]:hover {
     background-color: #a25109;
     border: 1px solid #a25109;
 }
@@ -526,12 +549,12 @@ div.userWrap {
 img.userPic {
     border-radius: 50%;
     border: 5px solid #fff;
-    width: 150px;
+    width: 155px;
     height: auto;
 }
 
 h2.user--name {
-    margin-top: 1.2em;
+    margin-top: 1em;
     text-align: center;
     font-weight: 400;
     margin-bottom: .2em;
@@ -577,15 +600,106 @@ cite {
     font-weight: 300;
 }
 
+/*********APPOINTMENTS FORM**********/
+section.appointments {
+    
+}
 
+form.gridFive {
+    display: grid;
+    font-family: 'Lato';
+    color: #333;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1em;
+    width: 60%;
+    margin: 0 auto;
+}
 
+div.form--column:nth-of-type(2n + 1) {
+    justify-self: end;
+    padding-right: 2em;
+    align-self: center;
+}
 
+div.submit-column {
+    grid-column: 1/-1;
+    margin: 2em auto 0 auto;
+}
 
+input:not([type="submit"]), select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: inherit;
+}
 
+input:not([type="submit"]):focus, textarea:focus {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.7);
+}
 
+textarea {
+    color: inherit;
+    height: 100px;
+    width: 100%;
+    padding: .1em;
+    resize: none;
+}
 
+form * {
+    outline: none;
+}
 
+/**************FOOTER*************/
 
+footer {
+    padding: 6em 1.5em;
+    font-size: .8em;
+    background-color: rgba(0,0,0,1);
+    color: #888;
+    clip-path: polygon(0 3vw, 100% 0, 100% 100%, 0 100%);
+}
 
+div.footer--copyright {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
 
+p.footer--main {
+    margin-bottom: 2em;
+}
 
+div.footerNavWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.footer--icons {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}
+
+div.footer--icons i {
+    color: #888;
+    transition: color 300ms ease-out 50ms;
+}
+
+div.footer--icons i:hover {
+    color: #fdc;
+}
+
+div.footer--navs {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+
+div.footer--navs a {
+    color: #888;
+    transition: color 300ms ease-out;
+}
+
+div.footer--navs a:hover {
+    color: #fdc;
+}

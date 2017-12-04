@@ -21,11 +21,11 @@
           </div>
            <div class="navWrap">
                <nav class="navs">
-                   <li><a href="#">Services</a></li>
-                   <li><a href="#">Testimonials</a></li>
+                   <li><a href="#services">Services</a></li>
+                   <li><a href="#gallery">Gallery</a></li>
                    <li class="logoNav"><a class="logoAnch" href=""><img class="logo" src="img/hair-salon-logo.jpg" alt="logo"></a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li><a href="#">Appointments</a></li>
+                   <li><a href="#testimonials">Testimonials</a></li>
+                   <li><a href="#appointments">Appointments</a></li>
                </nav>
             </div>
         </div> 
@@ -33,14 +33,14 @@
             <div class="hero--content">
                 <h1>Main Phrase Main Heading<br> More Here As Well</h1>
                 <h2>Stylistic phrase sub heading</h2>
-                <a href="" class="btn btn-full">Make Appointment</a>
-                <a href="" class="btn btn-ghost">Learn about Services</a>
+                <a href="#appointments" class="btn btn-full">Make Appointment</a>
+                <a href="#services" class="btn btn-ghost">Learn about Services</a>
             </div>
         </div>
          
    </header> 
    
-   <section class="intro clippy" id="myIntro">
+   <section class="intro clippy" id="intro">
        <div class="maxWrapper">
            <div class="headingWrapper">
                <h2 class="sectHeading">Introduction</h2>
@@ -67,8 +67,7 @@
        
    </section>
    
-   
-   <section class="services maxWrapper" id="myServices">
+   <section class="services maxWrapper" id="services">
        <div class="headingWrapper">
            <h2 class="sectHeading">Services</h2>
        </div>
@@ -96,8 +95,7 @@
           <div class="special">
              <h3>Weekly Special</h3>
               <p>This week only Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit saepe nisi est laudantium itaque iure, tempora doloribus, placeat, velit cumque ullam. Nisi doloremque atque dolorem mollitia eaque, quas maxime officia!</p>
-          </div>
-           
+          </div>           
    </section>
    
    <section class="gallery clippy" id="gallery">
@@ -196,11 +194,10 @@
                </div>
                <figcaption>Long Hair Woman</figcaption>
            </figure>
-       </div>
-       
+       </div> 
    </section>
    
-   <section class="testimonials clippy" id="myTestimonials">
+   <section class="testimonials clippy" id="testimonials">
        <div class="headingWrapper">
            <h2 class="sectHeading">Testimonials</h2>
        </div>
@@ -250,17 +247,77 @@
                     </div>
               </div>
            </div>        
-           
-           
+       </div>  
+   </section>
+   
+   <section class="appointments" id="appointments">
+       <div class="headingWrapper">
+           <h2 class="sectHeading">Appointments</h2>
        </div>
-       
+           
+           <form method="post" action="#" class="contact-form gridFive maxWrapper">
+                    <div class="form--column">
+                        <label for="name">Name</label>   
+                    </div>
+                    <div class="form--column">
+                        <input type="text" name="name" id="name" placeholder="Your name" required>      
+                    </div>              
+                    <div class="form--column">
+                        <label for="email">Email</label>   
+                    </div>
+                    <div class="form--column">
+                        <input type="email" name="email" id="email" placeholder="Your email" required>         
+                    </div>               
+                    <div class="form--column">
+                        <label for="find-us">Select a service</label>   
+                    </div>
+                    <div class="form--column">
+                        <select name="find-us" id="find-us">
+                            <option value="haircut">Haircut</option>
+                            <option value="hairstyle">Hairstyle</option>
+                            <option value="coloring">Coloring</option>
+                            <option value="other">Other</option>
+                        </select>    
+                    </div> 
+                    <div class="form--column">
+                        <label for="date">Appointment Date</label>   
+                    </div>
+                    <div class="form--column">
+                        <input type="date" name="date" id="date" required>      
+                    </div>   
+                    <div class="form--column">
+                        <label>Special Requests</label>   
+                    </div>
+                    <div class="form--column">
+                        <textarea name="message" placeholder="Your message"></textarea>      
+                    </div>         
+                    <div class="submit-column">
+                        <input type="submit" value="Send it!" class="btn">
+                    </div>
+            </form>
+           
        
    </section>
    
-   
-   <footer>
-       
-       
+   <footer class="clippy">
+      <div class="maxWrapper">
+           <div class="footer--copyright">Copyright &copy; <span class="year">2016</span></div>
+           <p class="footer--main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium fuga accusamus rem, cumque molestias numquam commodi hic cupiditate ipsam aperiam obcaecati corporis id voluptate nesciunt sunt nulla laudantium minima a.</p>
+           <div class="footerNavWrapper">
+              <div class="footer--icons">
+                  <a href="#"><i class="fa fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa fa-twitter-square"></i></a>
+                  <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+              </div>
+                <div class="footer--navs">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                </div>
+            </div> 
+        </div>
    </footer>
     
     
