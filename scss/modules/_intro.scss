@@ -5,6 +5,18 @@ div.gridOne {
     grid-gap: 4em 2em;
     max-width: 90%;
     margin: 0 auto;
+    
+    @include breakpoint(max-width $medium) {
+        display: block;
+    }
+}
+
+div.pitch {
+    order: -1;
+    
+    @include breakpoint(max-width $medium) {
+        margin-bottom: 2em;
+    }
 }
 
 section.intro p {
@@ -17,16 +29,43 @@ section.intro p + p {
 
 section.intro h3 {
     text-align: center;
+    
+    @include breakpoint(max-width $medium) {
+        margin-bottom: .2em;
+    }
 }
 
 div.firstImgs {
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     transition: all 400ms ease-out;
     display: flex;
+    
+    @include breakpoint(max-width $medium) {
+        display: block;
+        float: left;
+        margin-right: .8em;
+        margin-bottom: .8em;
+        shape-outside: circle();
+        clip-path: initial;
+        border-radius: 50%;
+        overflow: hidden;
+        height: 210px;
+        width: 210px;
+    }
+}
+
+div.firstImgs.salonImg {
+    float: right;
+    margin-left: .8em;
+    margin-bottom: .8em;
 }
 
 div.firstImgs:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    
+    @include breakpoint(max-width $medium) {
+        clip-path: initial;
+    }
 }
 
 div.firstImgs img {
@@ -34,5 +73,12 @@ div.firstImgs img {
     display: block;
     width: 100%;
     object-fit: cover;
+    
+    @include breakpoint(max-width $medium) {
+        width: 350px;
+        height: auto;
+        border-radius: none;
+        
+    }
 }
 

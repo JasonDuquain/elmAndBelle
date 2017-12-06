@@ -13,6 +13,16 @@ div.gridFour {
     grid-gap: 2.5em;
     margin-top: 7.5em; /* was 120px*/
     align-items: center;
+    
+    @include breakpoint(max-width $medium) {
+        display: block;
+    }
+}
+
+@include breakpoint(max-width $medium) {
+    div.customer:not(.customer--one) {
+        margin-top: 6.6em;
+    }
 }
 
 div.customer--one {
@@ -80,6 +90,10 @@ h2.user--name {
     text-align: center;
     font-weight: 400;
     margin-bottom: .2em;
+    
+    @include breakpoint(max-width $medium) {
+        margin-top: .4em;
+    }
 }
 
 p.user--visits {

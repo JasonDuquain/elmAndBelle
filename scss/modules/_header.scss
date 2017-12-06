@@ -5,6 +5,12 @@ header {
     background-size: cover;
     background-attachment: fixed;
     background-position: 80% 0; 
+    
+    @include breakpoint(max-width $medium) {
+        padding: 1em;
+        background-position: center;
+    }
+        
 }
 
 div.hero--text {
@@ -13,6 +19,11 @@ div.hero--text {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
+    
+    @include breakpoint(max-width $medium) {
+        width: 100%;
+        padding: 1em;
+    }
 }
 
 div.hero--text h1 {
@@ -27,6 +38,10 @@ div.hero--text h1 {
     @include breakpoint(max-width $large) {
         font-size: 2.5em;
     }
+    
+    @include breakpoint(max-width $medium) {
+        font-size: 2.1em;
+    }
 }
 
 div.hero--text h2 {
@@ -38,6 +53,10 @@ div.hero--text h2 {
     
     @include breakpoint(max-width $large) {
         font-size: 1.5em;
+    }
+    
+    @include breakpoint(max-width $medium) {
+        font-size: 1.2em;
     }
 }
 

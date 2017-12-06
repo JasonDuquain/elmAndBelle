@@ -16,6 +16,11 @@ body {
     @include breakpoint(max-width $large) {
         font-size: 90%;
     }
+    
+    @include breakpoint(max-width $medium) {
+        font-size: 85%;
+    }
+    
 }
 
 div.maxWrapper, section.maxWrapper {
@@ -31,7 +36,11 @@ section {
     padding: 8em 1.5em;
     
     @include breakpoint(max-width $large) {
-        padding: 6em 1.5;
+        padding: 6em 1.5em;
+    }
+    
+    @include breakpoint(max-width $medium) {
+        padding: 4.5em 1em;
     }
 }
 

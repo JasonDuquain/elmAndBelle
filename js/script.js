@@ -4,7 +4,7 @@ let fullNav = document.querySelector('.fullNavWrapper');
 
 function stickee() {
     let navBottom = hdr.getBoundingClientRect().bottom;
-    if (navBottom <= 520) {
+    if (navBottom <= 500) {
         fullNav.classList.add('sticky');
     } else {
         fullNav.classList.remove('sticky');
@@ -119,5 +119,16 @@ bttBtn.addEventListener('click', function(e) {
     e.preventDefault();
     docElem.scrollTop = 0;
 });
+
+
+/************  HAMBURGER MENU  **************/
+let hamburgerMenu = document.querySelector('.hamburger-menu');
+
+hamburgerMenu.addEventListener('click', function() {
+    this.classList.toggle('animateHamburger');
+    fullNav.classList.toggle('showMenu');
+});
+
+
 
 

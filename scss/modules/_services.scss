@@ -16,6 +16,11 @@ div.gridTwo {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2.5em;
     margin-top: 3em;
+    
+    @include breakpoint(max-width $medium) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 div.services--content {
@@ -23,7 +28,12 @@ div.services--content {
     flex-direction: column;
     padding: 1.5em;
     background-color: rgba(0,0,0,.1);
-    border-radius: .4em;    
+    border-radius: .4em; 
+    
+    @include breakpoint(max-width $medium) {
+        flex: 1 1 300px;
+        margin: 1em;
+    }
 }
 
 div.services--content.pulsate {
@@ -81,6 +91,11 @@ div.special {
     border-top: .625em solid #a00606; /* was 10px*/
     border-bottom: .625em solid #a00606;
     margin: 3em auto 0 auto;
+    
+    @include breakpoint(max-width $medium) {
+        width: 90%;
+        max-width: none;
+    }
 }
 
 div.special h3 {
