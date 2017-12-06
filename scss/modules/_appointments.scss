@@ -1,0 +1,47 @@
+
+
+form.gridFive {
+    display: grid;
+    font-family: 'Raleway';
+    color: #333;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1em;
+    width: 60%;
+    margin: 0 auto;
+}
+
+div.form--column:nth-of-type(2n + 1) {
+    justify-self: end;
+    padding-right: 2em;
+    align-self: center;
+}
+
+div.submit-column {
+    grid-column: 1/-1;
+    margin: 2em auto 0 auto;
+}
+
+input:not([type="submit"]), select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: inherit;
+}
+
+input:not([type="submit"]):focus, textarea:focus {
+    box-shadow: inset 0 0 5px rgba(0,0,0,.7);
+}
+
+textarea {
+    color: inherit;
+    height: 100px;
+    width: 100%;
+    padding: .1em;
+    resize: none;
+}
+
+form * {
+    outline: none;
+}
+

@@ -1,0 +1,166 @@
+.fullNavWrapper {
+    transition: all 300ms ease-out;
+}
+
+.fullNavWrapper.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    z-index: 100;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+div.icons {
+    text-align: right;
+    margin-right: 3em;
+}
+
+.fullNavWrapper.sticky div.icons {
+    margin-top: .3em
+}
+
+div.icons a {
+    display: inline-block;
+}
+
+i.fa {
+    font-size: 1.2em;
+    display: inline-block;
+    transition: transform 200ms ease-in;
+}
+
+div.icons i.fa:hover {
+    transform: scale(1.4);
+}
+
+div.icons a:not(:first-child) {
+    margin-left: 1em;
+}
+
+.fa-facebook-square {
+    color: rgb(59, 89, 152);
+}
+
+.fa-twitter-square {
+    color: rgb(0,182,241);
+}
+
+.fa-pinterest-square {
+    color: rgb(203,32,39);
+}
+
+.fa-instagram {
+    color: rgb(195,42,163);
+}
+
+div.navWrap {
+    margin-top: -1em;
+}
+
+nav.navs {
+    display: flex;
+}
+
+li.logoNav {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+li.logoNav img.logo {
+    border-radius: 50%;
+    height: 100px;
+    width: auto;
+    margin-top: -1.1em;
+    opacity: .9;
+    transition: all 300ms 300ms;
+}
+
+div.fullNavWrapper.sticky li.logoNav img.logo {
+    height: 70px;
+    width: auto;
+    margin-top: 0em;
+}
+
+li.logoNav::before {
+    font-size: 4em;
+    font-weight: 500;
+    line-height: .6;
+    color: $mainOrange;
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    content: "Elm";
+    top: 20%;
+    right: 120%;
+    
+}
+
+li.logoNav::after {
+    font-size: 4em;
+    font-weight: 500;
+    line-height: .6;
+    color: $mainOrange;
+    font-family: 'Tangerine', cursive;
+    position: absolute;
+    content: "Belle";
+    top: 20%;
+    left: 120%;
+}
+
+div.fullNavWrapper.sticky li.logoNav::before, div.fullNavWrapper.sticky li.logoNav::after {
+    font-size: 3em;
+    top: 30%;
+}
+
+nav.navs li:not(.logoNav) {
+    margin-top: 1.5em;
+}
+/***ADDED TO ENSURE LOGO IS CENTERED - FIND A BETER FIX***/
+nav.navs li:nth-child(2) {
+    padding-right: 5em;  
+}
+
+div.fullNavWrapper.sticky li:not(.logoNav) {
+    margin-top: 1.7em;
+}
+
+nav.navs li:first-child, nav.navs li:nth-child(4) {
+    margin-right: 1.5em;
+}
+
+nav.navs a:link, nav.navs a:visited {
+    //font-size: 1.2em;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav.navs a:link::after, nav.navs a:visited::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    top: 100%;
+    border-bottom: 0.125em solid $mainOrange;
+    transition: all 300ms ease-out;    
+}
+
+/*mgiht need to add link and visited pseudo classes to avoid any conflicts!!!*/
+nav.navs a:not(.logoAnch):hover::after {
+    left: 0;
+    right: 0;
+}
+
+div.fullNavWrapper.sticky nav.navs a:link, div.fullNavWrapper.sticky nav.navs a:visited {
+    font-size: 1em;
+}
+
+nav.navs a.scrollHighlight {
+    color: $mainOrange;
+}
+

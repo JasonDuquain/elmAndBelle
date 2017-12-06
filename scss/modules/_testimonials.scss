@@ -1,0 +1,124 @@
+
+section.testimonials {
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/items.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+div.gridFour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5em;
+    margin-top: 120px;
+    align-items: center;
+}
+
+div.customer--one {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: all 1100ms ease-out;
+    
+    &.animateScroll {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+}
+
+div.customer--two {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: all 1100ms ease-out;
+    
+    &.animateScroll {
+       opacity: 1;
+        visibility: visible;
+        transform: translateY(0); 
+    }
+}
+
+div.customer--three {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 1100ms ease-out;
+    
+    &.animateScroll {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+}
+
+div.customer--content {
+    background-color: rgba(255,255,255,.4);
+    padding: 1.5em;
+    border: 5px solid #fff;
+    border-radius: 4px;
+}
+
+div.userWrap {
+    text-align: center;
+    margin-top: -107px;
+}
+
+img.userPic {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    width: 155px;
+    height: auto;
+}
+
+h2.user--name {
+    margin-top: 1em;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: .2em;
+}
+
+p.user--visits {
+    text-align: center;
+    margin-bottom: .75em;
+}
+
+div.quoteWrap {
+    padding: 2em;
+    background-color: $mainOrange;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    clip-path: polygon(0 1em, 100% 0, 100% calc(100% - 1em), 0 100%);
+    color: #fff;
+}
+
+blockquote {
+    margin-bottom: 1em; 
+    line-height: 1.4;
+    font-weight: 300;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+    color: rgba(255,255,255,.3);
+    font-size: 11em;
+    line-height: .5;
+    display: block;
+    position: absolute;
+    top: .05em;
+    left: -.22em;
+    font-family: sans-serif;
+}
+
+cite {
+    display: block;
+    font-style: italic;
+    text-align: right;
+    font-weight: 300;
+}
+

@@ -1,0 +1,91 @@
+section.intro {
+    background-color: rgba(0,0,0,1);
+    color: #fff;
+}
+
+p.services-para {
+    line-height: 1.7;
+    font-size: 1.3em;
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+div.gridTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2.5em;
+    margin-top: 3em;
+}
+
+div.services--content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,.1);
+    border-radius: .4em;
+        
+}
+
+div.services--content.pulsate {
+    
+    
+    &.animateScroll {
+        opacity: 1;
+        visibility: visible;
+        animation: pulse 1100ms; 
+    }
+}
+
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
+
+div.services--content p {
+    margin-bottom: 1.5em;
+}
+
+div.services--content a.btn {
+    margin-top: auto;
+    align-self: center;
+}
+
+div.services--content i {
+    font-size: 250%;
+    color: $mainOrange;
+    margin-bottom: .3em;
+}
+
+div.special {
+    font-weight: 300;
+    margin-top: 3em;
+    max-width: 40%;
+    padding: 1.5em;
+    border-radius: 3em;
+    background-image: linear-gradient(#fff, #fefaf0);
+    border-top: 10px solid #a00606;
+    border-bottom: 10px solid #a00606;
+    margin: 3em auto 0 auto;
+}
+
+div.special h3 {
+    color: #a00606;
+    text-align: center;
+    font-size: 1.6em
+}

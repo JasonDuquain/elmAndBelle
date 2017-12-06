@@ -1,0 +1,36 @@
+
+div.gridOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4em 2em;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+section.intro p {
+    line-height: 1.7;
+}
+
+section.intro p + p {
+    margin-top: 2em
+}
+
+section.intro h3 {
+    text-align: center;
+}
+
+div.firstImgs {
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: all 400ms ease-out;
+}
+
+div.firstImgs:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+div.firstImgs img {
+    border-radius: 1em;
+    display: block;
+    width: 100%;
+}
+

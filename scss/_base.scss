@@ -1,0 +1,102 @@
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    text-decoration: none;
+}
+
+div.maxWrapper, section.maxWrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.4;
+}
+
+section {
+    padding: 8em 1.5em;
+}
+
+section.clippy {
+    clip-path: polygon(0 3vw, 100% 0, 100% calc(100% - 3vw), 0 100%);
+}
+
+@supports ((clip-path: polygon(0 0)) or
+(-webkit-clip-path: polygon(0 0))) {
+    section.clippy, footer.clippy {
+        margin-top: -3.4vw;
+    }
+}
+
+div.headingWrapper {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+h2.sectHeading {
+    font-size: 2.5em;
+    font-weight: 300;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+h2.sectHeading::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1.5em;
+    background-color: $mainOrange; 
+}
+
+h2.sectHeading::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1.5em;
+    background-color: $mainOrange; 
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 1em; 
+}
+
+@keyframes highlightTarget {
+    0% {
+       letter-spacing: 8px;
+        background-color: goldenrod;
+    }
+    
+    100% {
+        letter-spacing: 2px;
+        background-color: inherit;
+    }
+}
+
+section:target h2.sectHeading {
+    animation: highlightTarget 1200ms ease-out;
+}
+
+
+

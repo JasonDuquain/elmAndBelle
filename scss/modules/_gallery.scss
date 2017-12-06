@@ -1,0 +1,99 @@
+
+section.gallery {
+    background-color: #000;
+    color: #fff;
+}
+
+div.gridThree {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1em;
+    grid-auto-flow: row dense;
+}
+
+div.gridThree img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #333;
+    padding: 10px;
+    margin: 5px;
+}
+
+figure div.imgWrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+figure img {
+    flex: 1;
+    transform: scale(1);
+    opacity: .6;
+    transition: all 300ms ease-out;
+    object-fit: cover;
+    transform-origin: center top;
+}
+
+figure:hover img {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+figure.two-span {
+    grid-row: auto / span 2;
+}
+
+figure div.imgWrap {
+    overflow: hidden;
+}
+
+figure figcaption {
+    text-align: right;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.5);
+    padding-top: 3px;
+}
+
+figure div.price {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    line-height: .7;
+    opacity: 0;
+    transform: scale(4);
+    color: $mainOrange;
+    transition: all 300ms ease-out;
+}
+
+figure:hover div.price {
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1) translate(-50%, -50%);
+}
+
+/* DOESNT WORK ON HOVER - POSSIBLE???
+
+figure:hover figure::before {
+    content: "$300";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    opacity: 1;
+}
+*/
+
