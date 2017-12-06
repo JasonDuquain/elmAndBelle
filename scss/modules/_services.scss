@@ -4,8 +4,8 @@ section.intro {
 }
 
 p.services-para {
-    line-height: 1.7;
-    font-size: 1.3em;
+    line-height: 1.6;
+    font-size: 1.2em;
     max-width: 80%;
     margin: 0 auto;
     font-weight: 300;
@@ -23,8 +23,7 @@ div.services--content {
     flex-direction: column;
     padding: 1.5em;
     background-color: rgba(0,0,0,.1);
-    border-radius: .4em;
-        
+    border-radius: .4em;    
 }
 
 div.services--content.pulsate {
@@ -79,13 +78,13 @@ div.special {
     padding: 1.5em;
     border-radius: 3em;
     background-image: linear-gradient(#fff, #fefaf0);
-    border-top: 10px solid #a00606;
-    border-bottom: 10px solid #a00606;
+    border-top: .625em solid #a00606; /* was 10px*/
+    border-bottom: .625em solid #a00606;
     margin: 3em auto 0 auto;
 }
 
 div.special h3 {
     color: #a00606;
     text-align: center;
-    font-size: 1.6em
+    font-size: 1.6em;
 }

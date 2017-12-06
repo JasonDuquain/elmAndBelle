@@ -23,6 +23,10 @@ div.hero--text h1 {
     margin-bottom: .3em;
     letter-spacing: 2px;
     word-spacing: 2px;
+    
+    @include breakpoint(max-width $large) {
+        font-size: 2.5em;
+    }
 }
 
 div.hero--text h2 {
@@ -31,6 +35,10 @@ div.hero--text h2 {
     font-style: italic;
     font-weight: 300;
     margin-bottom: .7em;
+    
+    @include breakpoint(max-width $large) {
+        font-size: 1.5em;
+    }
 }
 
 a.btn:link, a.btn:visited, input[type="submit"] {
@@ -48,8 +56,8 @@ a.btn-full:link, a.btn-full:visited, input[type="submit"] {
 }
 
 a.btn-full:hover, input[type="submit"]:hover {
-    background-color: #a25109;
-    border: 1px solid #a25109;
+    background-color: darken($mainOrange, 10);
+    border: 1px solid darken($mainOrange, 10);
 }
 
 a.btn-ghost:link, a.btn-ghost:visited {

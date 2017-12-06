@@ -12,6 +12,10 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #333;
     text-decoration: none;
+    
+    @include breakpoint(max-width $large) {
+        font-size: 90%;
+    }
 }
 
 div.maxWrapper, section.maxWrapper {
@@ -25,6 +29,10 @@ p {
 
 section {
     padding: 8em 1.5em;
+    
+    @include breakpoint(max-width $large) {
+        padding: 6em 1.5;
+    }
 }
 
 section.clippy {
@@ -51,14 +59,18 @@ h2.sectHeading {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
+    
+    @include breakpoint(max-width $large) {
+        font-size: 2em;
+    }
 }
 
 h2.sectHeading::before {
     content: "";
     position: absolute;
     display: block;
-    height: 2px;
-    width: 40px;
+    height: .05em; /* was 2px*/
+    width: 1em; /* was 16px*/
     top: 50%;
     transform: translateY(-50%);
     left: -1.5em;
@@ -69,8 +81,8 @@ h2.sectHeading::after {
     content: "";
     position: absolute;
     display: block;
-    height: 2px;
-    width: 40px;
+    height: .05em; /* was 2px*/
+    width: 1em; /*40px @ 16px*/
     top: 50%;
     transform: translateY(-50%);
     right: -1.5em;

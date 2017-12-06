@@ -11,7 +11,7 @@ div.gridFour {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2.5em;
-    margin-top: 120px;
+    margin-top: 7.5em; /* was 120px*/
     align-items: center;
 }
 
@@ -59,19 +59,19 @@ div.customer--three {
 div.customer--content {
     background-color: rgba(255,255,255,.4);
     padding: 1.5em;
-    border: 5px solid #fff;
-    border-radius: 4px;
+    border: .3125em solid #fff;
+    border-radius: .25em;
 }
 
 div.userWrap {
     text-align: center;
-    margin-top: -107px;
+    margin-top: -6.6875em; /*was -107px*/
 }
 
 img.userPic {
     border-radius: 50%;
-    border: 5px solid #fff;
-    width: 155px;
+    border: .3125em solid #fff;
+    width: 9.6875em; /* was 155px*/
     height: auto;
 }
 
