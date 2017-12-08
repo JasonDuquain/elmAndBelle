@@ -6,96 +6,132 @@ section.gallery {
 
 div.gridThree {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: 275px;
-    grid-auto-rows: 275px;
-    grid-gap: 1em;
+    margin: 5em 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 180px;
+    grid-gap: 1.6em;
     grid-auto-flow: row dense;
 }
 
-div.gridThree img {
-    width: 100%;
-    height: auto;
-}
-
-figure {
-    display: flex;
-    flex-direction: column;
+.item {
+    grid-column-start: auto;
+    grid-row-start: auto;
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #333;
-    padding: 10px;
-    margin: 5px;
-}
-
-figure div.imgWrap {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    justify-content: flex-end;
+    background: #0c9a9a;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;	
+    transition: transform 0.3s ease-in-out;
 }
 
-figure img {
-    flex: 1;
-    transform: scale(1);
-    opacity: .6;
-    transition: all 300ms ease-out;
-    object-fit: cover;
-    transform-origin: center top;
+.item:nth-of-type(1n) {
+  background-image: url("../img/gal-4.jpg");
 }
 
-figure:hover img {
-    transform: scale(1.3);
-    opacity: 1;
+.item:nth-of-type(2n) {
+  background-image: url("../img/gal-2.jpg");
 }
 
-figure.two-span {
-    grid-row: auto / span 2;
+.item:nth-of-type(3n) {
+  background-image: url("../img/gal-3.jpg");
 }
 
-figure div.imgWrap {
-    overflow: hidden;
+.item:nth-of-type(4n) {
+  background-image: url("../img/gal-7.jpg");
 }
 
-figure figcaption {
-    text-align: right;
-    margin-top: 10px;
-    border-top: 1px solid rgba(255,255,255,.5);
-    padding-top: 3px;
+.item:nth-of-type(5n) {
+  background-image: url("../img/gal-1.jpg");
 }
 
-figure div.price {
-    font-family: 'Tangerine', cursive;
-    font-weight: 700;
+.item:nth-of-type(6n) {
+  background-image: url("../img/gal-6.jpg");
+}
+
+.item:nth-of-type(7n) {
+  background-image: url("../img/gal-10.jpg");
+}
+
+.item:nth-of-type(8n) {
+  background-image: url("../img/gal-8.jpg");
+}
+
+.item:nth-of-type(9n) {
+  background-image: url("../img/gal-9.jpg");
+}
+
+.item:nth-of-type(10n) {
+  background-image: url("../img/gal-12.jpg");
+}
+
+.item:nth-of-type(11n) {
+  background-image: url("../img/gal-11.jpg");
+}
+
+.item:nth-of-type(12n) {
+  background-image: url("../img/gal-5.jpg");
+}
+
+.item:after {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4em;
-    line-height: .7;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    transition: opacity 300ms ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.04);
+}
+
+.item:hover:after {
     opacity: 0;
-    transform: scale(4);
-    color: $mainOrange;
-    transition: all 300ms ease-out;
 }
 
-figure:hover div.price {
-    opacity: 1;
-    z-index: 2;
-    transform: scale(1) translate(-50%, -50%);
+.item--medium {
+    grid-row-end: span 2;  
 }
 
-/* DOESNT WORK ON HOVER - POSSIBLE???
-
-figure:hover figure::before {
-    content: "$300";
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    opacity: 1;
+.item--large {
+    grid-row-end: span 3;  
 }
-*/
+
+.item--full {
+    grid-column-end: auto;
+}
+
+.item__details {
+    position: relative;
+    z-index: 1;
+    padding: .7em;
+    background: rgba(255,255,255,.8);
+    text-transform: lowercase;
+    color: #828282;
+
+}
+
+.item__details::before {
+    content: "";
+    font-weight: bold;
+    font-size: .9em;
+    padding-right: .5em;
+    color: #444;
+}
+
+
+@include breakpoint($medium) {
+    .item--full {
+         grid-column: 1/-1;
+         grid-row-end: span 2; 
+  }
+}
+
 
