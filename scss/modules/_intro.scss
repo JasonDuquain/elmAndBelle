@@ -8,6 +8,7 @@ div.gridOne {
     
     @include breakpoint(max-width $medium) {
         display: block;
+        max-width: none;
     }
 }
 
@@ -33,6 +34,10 @@ section.intro h3 {
     @include breakpoint(max-width $medium) {
         margin-bottom: .2em;
     }
+    
+    @include breakpoint(max-width $small) {
+        margin-bottom: .5em;
+    } 
 }
 
 div.firstImgs {
@@ -52,12 +57,28 @@ div.firstImgs {
         height: 210px;
         width: 210px;
     }
+    
+    @include breakpoint(max-width $small) {
+        float: none;
+        overflow: visible;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        shape-outside: none;
+        border-radius: 0;
+        margin: 0 auto 1.9em auto;
+    }
 }
 
 div.firstImgs.salonImg {
     float: right;
     margin-left: .8em;
     margin-bottom: .8em;
+    
+    @include breakpoint(max-width $small) {
+        float: none;
+        margin: 0 auto 1.5em auto;
+    } 
 }
 
 div.firstImgs:hover {
@@ -78,6 +99,12 @@ div.firstImgs img {
         width: 350px;
         height: auto;
         border-radius: none;
+        
+    }
+    
+    @include breakpoint(max-width $small) {
+        width: 100%;
+        height: auto;
         
     }
 }

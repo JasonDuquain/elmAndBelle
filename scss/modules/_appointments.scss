@@ -8,12 +8,31 @@ form.gridFive {
     grid-row-gap: 1em;
     width: 60%;
     margin: 0 auto;
+    
+    @include breakpoint(max-width $small) {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-row-gap: .5em;
+        margin: 0 auto;
+    }
 }
 
 div.form--column:nth-of-type(2n + 1) {
     justify-self: end;
     padding-right: 2em;
     align-self: center;
+    
+    @include breakpoint(max-width $small) {
+        justify-self: stretch;
+        align-self: end;
+        padding-right: 0;
+    }
+}
+
+@include breakpoint(max-width $small) {
+    div.form--column:nth-of-type(2n + 2) {
+        margin-bottom: 1em;
+    }  
 }
 
 div.submit-column {

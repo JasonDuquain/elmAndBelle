@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 //var gcmq = require('gulp-group-css-media-queries');
+var browserSync = require('browser-sync').create();
  
 
 gulp.task('styles', function() {
@@ -19,6 +20,20 @@ gulp.task('styles', function() {
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('css'));
+});
+
+
+gulp.task('browser-sync', ['styles'], function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
+
+gulp.task('hello', ['browser-sync'], function () {
+    //gulp.watch("./*.js", ['scripts']);
+    gulp.watch("scss/**/*.scss").on('change', browserSync.reload);
 });
 
 gulp.task('watch', ['styles'], function () {

@@ -78,6 +78,7 @@ window.addEventListener('resize', () => {
 });    
 
 */
+
 let servicePulsate = document.querySelector('.pulsate');
 let custTestimonials = document.querySelectorAll('.customer');
 let twoSects = [servicePulsate, ...custTestimonials];
@@ -129,6 +130,10 @@ hamburgerMenu.addEventListener('click', function() {
     fullNav.classList.toggle('showMenu');
 });
 
-
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 790) {
+       fullNav.classList.remove('showMenu'); 
+    }
+});
 
 

@@ -87,3 +87,9 @@ a.btn-ghost:hover {
     color: #fff;
     background-color: $mainOrange;
 }
+
+@include breakpoint(max-width $small) {
+    .hero--content a.btn-full:link, .hero-content a.btn-full:visited {
+        margin-bottom: 1em;
+    }
+}

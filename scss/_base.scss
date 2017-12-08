@@ -12,6 +12,7 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #333;
     text-decoration: none;
+    overflow-x: hidden; //if this causes problems use js to fix overflow and animated on scroll items and the before/after text on the img.logo
     
     @include breakpoint(max-width $large) {
         font-size: 90%;
@@ -19,6 +20,10 @@ body {
     
     @include breakpoint(max-width $medium) {
         font-size: 85%;
+    }
+    
+    @include breakpoint(max-width $small) {
+        font-size: 82%;
     }
     
 }

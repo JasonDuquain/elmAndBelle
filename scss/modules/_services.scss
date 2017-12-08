@@ -9,6 +9,11 @@ p.services-para {
     max-width: 80%;
     margin: 0 auto;
     font-weight: 300;
+    
+    @include breakpoint(max-width $small) {
+        max-width: none;
+        line-height: 1.4;
+    }
 }
 
 div.gridTwo {
@@ -33,6 +38,11 @@ div.services--content {
     @include breakpoint(max-width $medium) {
         flex: 1 1 300px;
         margin: 1em;
+    }
+    
+    @include breakpoint(max-width $small) {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
