@@ -4,7 +4,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass'); 
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-
+//var gcmq = require('gulp-group-css-media-queries');
+ 
 
 gulp.task('styles', function() {
     return gulp.src('scss/**/*.scss')
@@ -25,6 +26,21 @@ gulp.task('watch', ['styles'], function () {
 });
 
 
+/********* MANUAL TASK TO RUN AT END ********
+gulp.task('combinemq', function () {
+    gulp.src('css/styles.css')
+        .pipe(gcmq())
+        .pipe(gulp.dest('./css'));
+});
+**************************************/
+
+
 gulp.task('default', ['watch']);
+
+
+
+
+
+
 
 

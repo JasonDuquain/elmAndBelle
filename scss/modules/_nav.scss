@@ -4,6 +4,8 @@
     @include breakpoint(max-width $medium) {
         opacity: 0;
         visibility: hidden;
+        transform: scale(1.3);
+        transform-origin: center bottom;
     }
 }
 
@@ -21,6 +23,7 @@
 .fullNavWrapper.showMenu {
     opacity: 1;
     visibility: visible;
+    transform: scale(1);
 }
 
 .fullNavWrapper.showMenu div.navWrap {
@@ -28,7 +31,12 @@
 }
 
 .fullNavWrapper.showMenu li.logoNav {
-    margin-top: -3.5em;
+    margin-top: -1.8em;
+    margin-bottom: -3.5em;
+}
+
+.fullNavWrapper.showMenu div.icons {
+    display: none;
 }
 
 div.icons {
@@ -85,6 +93,7 @@ nav.navs {
 }
 
 .fullNavWrapper.showMenu nav.navs {
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -92,11 +101,19 @@ li.logoNav {
     margin-right: auto;
     margin-left: auto;
     position: relative;
+    pointer-events: none;
+    
+    & a {
+        pointer-events: all;
+    }
 }
 
 .fullNavWrapper.showMenu li.logoNav {
-    margin-left: initial;
-    margin-right: initial;
+    order: -1;
+    flex: 0 0 100%;
+    text-align: center;
+    //margin-left: initial;
+    //margin-right: initial;
 }
 
 li.logoNav img.logo {
@@ -111,7 +128,7 @@ li.logoNav img.logo {
 div.fullNavWrapper.sticky li.logoNav img.logo {
     height: 70px;
     width: auto;
-    margin-top: 0em;
+    margin-top: 0;
 }
 
 li.logoNav::before {
@@ -152,8 +169,17 @@ nav.navs li:nth-child(2) {
     padding-right: 5em;  
 }
 
+div.fullNavWrapper.showMenu nav.navs li:nth-child(2) {
+    padding-right: 0;  
+}
+
 div.fullNavWrapper.sticky li:not(.logoNav) {
     margin-top: 1.7em;
+}
+
+div.fullNavWrapper.showMenu li:not(.logoNav) {
+    flex: 0 0 45%;
+    text-align: center;
 }
 
 nav.navs li:first-child, nav.navs li:nth-child(4) {
@@ -194,7 +220,7 @@ nav.navs a.scrollHighlight {
 
 .hamburger-menu {
     position: absolute;
-    z-index: 99;
+    z-index: 9999;
     top: 1em;
     right: 1.5em;
     width: 20px;

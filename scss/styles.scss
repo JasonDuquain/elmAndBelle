@@ -11,7 +11,7 @@
 @import "modules/appointments";
 @import "modules/footer";
 
-@include breakpoint-set("to ems", true);
+/* make sure breakpoint-to-ems mixin is in var/scss file, not here!*/
 
 
 #back-to-top {
