@@ -54,7 +54,7 @@ section {
 
 @media (max-width: 49.375em) {
   section {
-    padding: 4.5em 1em;
+    /* padding: 4.5em 1em; */
   }
 }
 
@@ -1203,7 +1203,7 @@ div.form--column:nth-of-type(2n + 1) {
   div.form--column:nth-of-type(2n + 1) {
     justify-self: stretch;
     -ms-flex-item-align: end;
-        align-self: end;
+    align-self: end;
     padding-right: 0;
   }
 }
